@@ -61,7 +61,8 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             velocity.y = jumpForce;
             jumpInput = false;
         }
-        
+
+       
         // Check if character lost contact with ground this frame
         if (wasGrounded == true && isGrounded == false)
         {
