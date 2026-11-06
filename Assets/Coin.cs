@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Coin : MonoBehaviour
 {
@@ -7,5 +8,6 @@ public class Coin : MonoBehaviour
     {
         Destroy(gameObject);
         TimerScript.timerStoped = true;
+        SceneManager.LoadScene("Menu");
     }
 }
