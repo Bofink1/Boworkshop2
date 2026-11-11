@@ -24,10 +24,7 @@ public class TimerScript : MonoBehaviour
             displayText.text = timer.ToString("0.00"); 
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Game");
-        }
+      
     }
     
 }
