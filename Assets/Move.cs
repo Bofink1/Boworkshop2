@@ -13,7 +13,7 @@ using UnityEngine.InputSystem;
 
 // Use UnityEvents in the PlayerInput-component to call movement-functions in this script.
 
-// This script has setup for playing animations and sounds.
+// This script has for playing animations and sounds.
 
 public class CustomizablePlatformerMovement : MonoBehaviour
 {
@@ -62,6 +62,14 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             jumpInput = false;
         }
 
+        if (moveInput == new Vector2(0,0)) 
+        {
+            animator.enabled = false;
+        }
+        else
+        {
+            animator.enabled = true;
+        }
        
         // Check if character lost contact with ground this frame
         if (wasGrounded == true && isGrounded == false)
@@ -151,10 +159,13 @@ public class CustomizablePlatformerMovement : MonoBehaviour
         if (controlEnabled)
         {
             moveInput = context.ReadValue<Vector2>().normalized;
+            
+
         }
         else
         {
             moveInput = Vector2.zero;
+            
         }
     }
 

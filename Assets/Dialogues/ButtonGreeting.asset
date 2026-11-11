@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcee1e4487c7c84488e0eac738cf4ed, type: 3}
   m_Name: ButtonGreeting
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  npcText: 
-  options: []
+  npcText: Would you like to press the button?
+  options:
+  - text: Yes...
+    nextNode: {fileID: 11400000, guid: 97c214c0a2647b94d8ca576865557a0f, type: 2}
+    objectiveIndex: 0
+    destroyOnClose: {fileID: 0}
+  - text: No.
+    nextNode: {fileID: 0}
+    objectiveIndex: 0
+    destroyOnClose: {fileID: 0}

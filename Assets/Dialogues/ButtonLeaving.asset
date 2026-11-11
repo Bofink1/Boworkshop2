@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcee1e4487c7c84488e0eac738cf4ed, type: 3}
   m_Name: ButtonLeaving
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  npcText: 
-  options: []
+  npcText: A door opens behind you...
+  options:
+  - text: ...
+    nextNode: {fileID: 0}
+    objectiveIndex: 0
+    DestroyOnClose: {fileID: 0}

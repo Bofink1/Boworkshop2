@@ -8,16 +8,29 @@ using UnityEngine.InputSystem;
 
 public class NpcInteract : MonoBehaviour
 {
+
+    public PlayerInput Pinput;
     [Header("Proximity Alert")]
     public GameObject Proximity;
 
     [Header("Default Dialogue")]
     public DialogueNode startingDialogue;
+    public GameObject DestroyOnClose;
+    public GameObject LoadOnClose;
+    private DialogueUI dialog;
+
 
    
-  
 
-   
+    private void OnEnable()
+    {
+        Pinput.actions["Interact"].performed += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        Pinput.actions["Interact"].performed += OnInteract;
+    }
 
     private bool playerInRange = false;
 
@@ -25,17 +38,28 @@ public class NpcInteract : MonoBehaviour
     {
 
         Proximity.SetActive(false);
-
+        dialog = FindFirstObjectByType<DialogueUI>();
     }
 
+    private void Update()
+    {
+       /* if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("hello");
+            DialogueNode dialogueToShow = GetAppropriateDialogue();
+            dialog.StartDialogue(dialogueToShow);
+        } */
+    }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (playerInRange)
         {
             Debug.Log("hello");
+            DialogueUI.ToBeDestroyed = DestroyOnClose;
+            DialogueUI.ToBeLoaded = LoadOnClose;
             DialogueNode dialogueToShow = GetAppropriateDialogue();
-            FindObjectOfType<DialogueUI>().StartDialogue(dialogueToShow);
+            dialog.StartDialogue(dialogueToShow);
         } 
     }
 

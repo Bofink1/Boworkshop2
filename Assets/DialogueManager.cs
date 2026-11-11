@@ -30,6 +30,10 @@ public class DialogueManager : MonoBehaviour
         if (option.nextNode != null)
         {
             dialogueUI.StartDialogue(option.nextNode);
+            if (option.destroyOnClose != null)
+            {
+                option.destroyOnClose.SetActive(false);
+            }
         }
         else
         {

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 
 [System.Serializable]
@@ -13,7 +13,7 @@ public class DialogueOption
 
     [Header("Optional Quest Actions")]
     public int objectiveIndex; //  which objective to complet
-    public GameObject DestroyOnClose;
+    public GameObject destroyOnClose;
 }
 
 [CreateAssetMenu(fileName = "New Dialogue Node", menuName = "Dialogue System/Dialogue Node")]

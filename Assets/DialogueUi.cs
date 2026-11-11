@@ -9,7 +9,10 @@ public class DialogueUI : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Button[] optionButtons;
     public GameObject panel;
+    public static GameObject ToBeDestroyed;
+    public static GameObject ToBeLoaded;
     private DialogueNode currentNode;
+   
   
    
  
@@ -20,7 +23,7 @@ public class DialogueUI : MonoBehaviour
         
         // Hide UI at start
         panel.SetActive(false);
-      
+   
     
     }
 
@@ -59,6 +62,8 @@ public class DialogueUI : MonoBehaviour
 
     public void EndDialogue()
     {
+        Destroy(ToBeDestroyed);
+        ToBeLoaded.SetActive(true);
         panel.SetActive(false); // Hide UI when dialogue ends
     }
 }
