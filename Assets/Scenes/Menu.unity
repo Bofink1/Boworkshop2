@@ -439,7 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62806264314cd849a38661d85d2ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  text: {fileID: 580147773}
+  timeText: {fileID: 580147773}
+  BestTimeText: {fileID: 0}
 --- !u!114 &580147773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,7 +626,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1045901556}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadHighscoreScene
+        m_MethodName: LoadCreditsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     public static float timer;
+    public static float bestTime;
+    public static float time;
     public TMP_Text displayText;
     public static bool timerStoped;
 
@@ -23,8 +25,8 @@ public class TimerScript : MonoBehaviour
             timer += Time.deltaTime;
             displayText.text = timer.ToString("0.00"); 
         }
-
-      
+        
     }
+    
     
 }
