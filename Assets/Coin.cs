@@ -9,5 +9,6 @@ public class Coin : MonoBehaviour
         Destroy(gameObject);
         TimerScript.timerStoped = true;
         SceneManager.LoadScene("Menu");
+        HighscoreTracker.AddScore(TimerScript.timer);
     }
 }

@@ -62,7 +62,10 @@ public class DialogueUI : MonoBehaviour
 
     public void EndDialogue()
     {
-        Destroy(ToBeDestroyed);
+        if (ToBeDestroyed != null)
+        {
+            Destroy(ToBeDestroyed);
+        }
         ToBeLoaded.SetActive(true);
         panel.SetActive(false); // Hide UI when dialogue ends
     }

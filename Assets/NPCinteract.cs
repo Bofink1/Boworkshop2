@@ -15,6 +15,8 @@ public class NpcInteract : MonoBehaviour
 
     [Header("Default Dialogue")]
     public DialogueNode startingDialogue;
+    private bool talkedToBefore;
+    public DialogueNode secondaryDialogue;
     public GameObject DestroyOnClose;
     public GameObject LoadOnClose;
     private DialogueUI dialog;
@@ -36,20 +38,11 @@ public class NpcInteract : MonoBehaviour
 
     private void Start()
     {
-
+        talkedToBefore = false;
         Proximity.SetActive(false);
         dialog = FindFirstObjectByType<DialogueUI>();
     }
-
-    private void Update()
-    {
-       /* if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("hello");
-            DialogueNode dialogueToShow = GetAppropriateDialogue();
-            dialog.StartDialogue(dialogueToShow);
-        } */
-    }
+    
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -60,14 +53,21 @@ public class NpcInteract : MonoBehaviour
             DialogueUI.ToBeLoaded = LoadOnClose;
             DialogueNode dialogueToShow = GetAppropriateDialogue();
             dialog.StartDialogue(dialogueToShow);
+            talkedToBefore = true;
         } 
     }
 
   
     private DialogueNode GetAppropriateDialogue()
     {
-      
-            return startingDialogue;
+        if (talkedToBefore)
+        {
+            return secondaryDialogue;
+        }
+        
+        
+            return startingDialogue;   
+        
       
     }
     private void OnTriggerEnter2D(Collider2D other)
