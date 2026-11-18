@@ -10,10 +10,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Game");
 
     }
-    public void LoadHighscoreScene()
+    public void LoadCreditsScene()
     {
 
-        SceneManager.LoadScene("Highscore");
+        SceneManager.LoadScene("Credits");
 
     }
     public void LoadMenuScene()

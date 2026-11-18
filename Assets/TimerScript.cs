@@ -10,7 +10,7 @@ public class TimerScript : MonoBehaviour
     public TMP_Text displayText;
     public static bool timerStoped;
 
-    private void Start()
+    private void Awake()
     {
         timerStoped = false;
         timer = 0;
